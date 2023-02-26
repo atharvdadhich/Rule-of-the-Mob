@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link the main css file -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- link the main js file -->
+    <script type="module" src="js/app.js" defer></script>
+    <!-- link of the fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+</head>
+<body style="background-color: rgb(11, 10, 9);">
+        <!-- ai2html -->
+        <section class="ai2html">
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                <!-- This is the line that matters for import -->
+                <%- include('./ai2html-output/Landing.ejs'); %>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- scrolly -->
+        <section id="doge-scrolly">
+
+        <!-- define the scroll sections -->
+        <% const blocks=
+            [
+            { 
+                "filename" : "doge_2" , 
+                "anno" : "_blank-slide_" 
+            },
+            { 
+                "filename" : "doge_3" , 
+                "anno" : "_blank-slide_" 
+            },
+            { 
+                "filename" : "doge_4" , 
+                "anno" : "<div class='h1 fw-bold'> 1044 </div>Official Total Deaths" 
+            },
+            { 
+                "filename" : "doge_5" , 
+                "anno" : "<div class='h1 fw-bold'> 121 </div>Hindu Deaths in Riots" 
+            },
+            { 
+                "filename" : "doge_6" , 
+                "anno" : "<div class='h1 fw-bold'> 713 </div>Muslim Deaths in Riots" 
+            },
+            { 
+                "filename" : "doge_7" , 
+                "anno" : "<div class='h1 fw-bold'> 76 </div>Hindu Deaths by Police Firing" 
+            },
+            { 
+                "filename" : "doge_8" , 
+                "anno" : "<div class='h1 fw-bold'> 113 </div>Muslim Deaths by Police Firing" 
+            }
+            ] 
+        %>
+        <!-- every { filename, anno } object makes a new section -->
+
+        <!-- include the component -->
+        <%- include('./scrolly/scrolly.ejs', {id: "doge-scrolly" , blocks: blocks }); %>
+        
+        </section>
+
+        <!-- ai2html -->
+        <section class="ai2html">
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                <!-- This is the line that matters for import -->
+                <%- include('./ai2html-output/Mid.ejs'); %>
+                </div>
+            </div>
+            </div>
+        </section>
+        
+</body>
+</html>
